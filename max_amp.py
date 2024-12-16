@@ -1,7 +1,7 @@
 # Auto detect text files and perform LF normalization
 #* text=auto
 import numpy as np
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import os
 
 # Parameters
@@ -63,4 +63,12 @@ for omega in omega_range:
     max_amplitude = solve_pendulum(omega)
     max_amplitudes.append(max_amplitude)
 
-print("Max Amplitudes", max_amplitudes)
+#print("Max Amplitudes", max_amplitudes)
+
+# Plot maximum amplitude as a function of omega
+plt.figure(figsize=(10, 4))
+plt.plot(omega_range, max_amplitudes)
+plt.xlabel('Angular Frequency (omega)')
+plt.ylabel('Maximum Amplitude (theta_max)')
+plt.title('Maximum Amplitude vs. Angular Frequency')
+plt.grid()
